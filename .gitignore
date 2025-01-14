@@ -1,0 +1,14 @@
+# Ignore XAMPP-specific files
+     /xampp/
+     /htdocs/
+
+     # Ignore node_modules if you plan to use Node.js in the future
+     /node_modules/
+
+     # Ignore IDE-specific files
+     .vscode/
+     *.code-workspace
+
+     # Ignore OS-specific files
+     Thumbs.db
+     *.DS_Store
