@@ -100,4 +100,131 @@ This section outlines the API endpoints used in **RetroPlay Hub** for various fu
 - **Parameters:**
   - `user_id` (int) - Required
 - **Description:** Resets the user's high scores and game histories.
-- **Response:** JSON object confirming the reset.
+- **Response:** JSON object confirming the reset...
+
+
+**Description:**
+Comprehensive documentation of the TicTacToe game's backend API endpoints. This includes details on available actions, request parameters, and expected responses.
+
+**Content:**
+
+```markdown
+# API Documentation
+
+## Overview
+
+This document outlines the API endpoints for the TicTacToe game within RetroPlayHub. The backend is built using PHP and communicates with the frontend via AJAX (XMLHttpRequest). All responses are in JSON format.
+
+## Base URL
+
+```
+http://localhost/RetroPlayHub/backend/tic-tac-toe/game_controller.php
+```
+
+## Endpoints
+
+### 1. Make a Move
+
+**Description:**  
+Processes a player's move and triggers the AI's move based on the selected difficulty.
+
+**Request Method:**  
+POST
+
+**Parameters:**
+
+| Parameter | Type   | Description                 | Required |
+|-----------|--------|-----------------------------|----------|
+| action    | string | Action to perform (`make_move`) | Yes      |
+| position  | int    | Position on the board (0-8) | Yes      |
+
+**Example Request:**
+
+```
+POST /RetroPlayHub/backend/tic-tac-toe/game_controller.php
+Content-Type: application/x-www-form-urlencoded
+
+action=make_move&position=4
+```
+
+**Example Response:**
+
+```json
+{
+    "status": "continue",
+    "board": ["X", "O", "", "", "X", "", "", "", "O"],
+    "current_player": "X"
+}
+```
+
+**Possible Response Statuses:**
+
+- `error`: Indicates an error occurred (e.g., invalid position, position already taken, game over).
+- `win`: Declares a winner.
+- `draw`: Indicates the game ended in a draw.
+- `continue`: The game continues with the next player's turn.
+
+### 2. Reset Game
+
+**Description:**  
+Resets the game state to start a new match with the selected difficulty.
+
+**Request Method:**  
+POST
+
+**Parameters:**
+
+| Parameter | Type   | Description                  | Required |
+|-----------|--------|------------------------------|----------|
+| action    | string | Action to perform (`reset_game`) | Yes      |
+| difficulty| string | Difficulty level (`easy`, `medium`, `hard`) | No (defaults to `easy`) |
+
+**Example Request:**
+
+```
+POST /RetroPlayHub/backend/tic-tac-toe/game_controller.php
+Content-Type: application/x-www-form-urlencoded
+
+action=reset_game&difficulty=hard
+```
+
+**Example Response:**
+
+```json
+{
+    "status": "reset",
+    "board": ["", "", "", "", "", "", "", "", ""],
+    "current_player": "X"
+}
+```
+
+**Possible Response Statuses:**
+
+- `reset`: Game has been reset successfully.
+- `error`: Indicates an error occurred during the reset process.
+
+## Error Handling
+
+All error responses follow the structure:
+
+```json
+{
+    "status": "error",
+    "message": "Error description here."
+}
+```
+
+**Example:**
+
+```json
+{
+    "status": "error",
+    "message": "Position already taken."
+}
+```
+
+## Security Considerations
+
+- **Authentication:** All API requests require the user to be authenticated. Ensure that session management is handled securely.
+- **Input Validation:** All inputs are validated on the server side to prevent SQL injection and other malicious attacks.
+- **Error Messages:** Generic error messages are provided to prevent leakage of sensitive information.

@@ -205,3 +205,84 @@ Bootstrap's grid system and utility classes ensure that the application is respo
 ## **Summary**
 
 This architecture ensures a clean separation of concerns, making the application maintainable and scalable. The database design adheres to best practices, ensuring data integrity and efficient management of user and game data.
+
+
+**Description:**
+An overview of the TicTacToe game's system architecture within RetroPlayHub, detailing the interaction between frontend, backend, and the database.
+
+**Content:**
+
+```markdown
+# System Architecture
+
+## Overview
+
+The TicTacToe game in RetroPlayHub is designed using a client-server architecture, ensuring a clear separation of concerns between the frontend, backend, and database components. This structure facilitates scalability, maintainability, and security.
+
+## Components
+
+### 1. Frontend
+
+- **Technologies Used:** HTML, CSS (Bootstrap & custom), JavaScript
+- **Responsibilities:**
+  - Render the game interface and handle user interactions.
+  - Communicate with the backend via AJAX requests.
+  - Update the UI based on backend responses.
+
+### 2. Backend
+
+- **Technologies Used:** PHP
+- **Responsibilities:**
+  - Manage game logic, including move validation and AI behavior.
+  - Handle user authentication and session management.
+  - Process AJAX requests from the frontend.
+  - Interact with the database to record game history and scores.
+  - Respond with JSON-formatted data to the frontend.
+
+### 3. Database
+
+- **Technologies Used:** MySQL
+- **Responsibilities:**
+  - Store user credentials and authentication details.
+  - Record game history, including outcomes and timestamps.
+  - Maintain user scores based on game results.
+
+## Data Flow
+
+1. **User Interaction:**
+   - The player interacts with the game interface (e.g., selects difficulty, makes a move).
+
+2. **Frontend Processing:**
+   - JavaScript captures the interaction and sends an AJAX request to the backend with relevant data (e.g., action type, move position).
+
+3. **Backend Processing:**
+   - PHP scripts process the request, update the game state, and interact with the database as needed.
+   - AI logic is executed based on the selected difficulty level.
+
+4. **Database Interaction:**
+   - The backend records game outcomes and updates user scores using prepared statements to ensure security.
+
+5. **Response Generation:**
+   - The backend sends a JSON response back to the frontend with the updated game state and any relevant messages.
+
+6. **UI Update:**
+   - The frontend JavaScript parses the JSON response and updates the UI accordingly (e.g., displaying marks on the board, showing game status).
+
+## Security Measures
+
+- **Session Management:** Utilizes PHP sessions to maintain user state securely.
+- **Input Validation:** All inputs are validated and sanitized on the server side to prevent security vulnerabilities.
+- **Prepared Statements:** Database interactions use prepared statements to mitigate SQL injection risks.
+- **Error Handling:** Backend errors are logged server-side without exposing sensitive information to the client.
+
+## Technology Stack
+
+| Layer      | Technologies             |
+|------------|--------------------------|
+| Frontend   | HTML, CSS (Bootstrap), JavaScript |
+| Backend    | PHP                      |
+| Database   | MySQL                    |
+
+## Diagram
+
+*(Consider adding a simple system architecture diagram here if applicable.)*

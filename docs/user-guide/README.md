@@ -136,3 +136,65 @@ If you encounter any issues or have suggestions, feel free to reach out:
 
 - **Email:** support@retroplyhub.com
 - **GitHub Issues:** [RetroPlay Hub GitHub Repository](https://github.com/yourusername/RetroPlayHub/issues)
+
+**Description:**
+Provides an overview of the TicTacToe game within RetroPlayHub, including its purpose, features, setup instructions, and how to get started.
+
+**Content:**
+
+```markdown
+# RetroPlayHub - TicTacToe Game
+
+## Overview
+
+Welcome to the **TicTacToe** game within **RetroPlayHub**! This classic game offers a simple yet engaging way to challenge yourself against an AI opponent. Whether you're looking to pass the time or sharpen your strategic skills, TicTacToe provides endless fun and learning opportunities.
+
+## Features
+
+- **Multiple Difficulty Levels:**
+  - **Easy:** AI makes random moves.
+  - **Medium:** AI employs basic blocking strategies.
+  - **Hard:** AI utilizes the Minimax algorithm for optimal play.
+
+- **User Authentication:**
+  - Secure login and registration to track your game history and scores.
+
+- **Game History Recording:**
+  - Every game outcome (win, loss, draw) is recorded in the database for performance tracking.
+
+- **Responsive Design:**
+  - Play seamlessly across various devices, including desktops, tablets, and smartphones.
+
+## Installation and Setup
+
+Follow the [Developer Guide](../developer guide/setup.md) to set up the TicTacToe game locally. Ensure that all prerequisites are met and the environment is correctly configured for optimal performance.
+
+## How to Play
+
+Refer to the [Game Instructions](game-instructions.md) for a detailed guide on how to play TicTacToe, including game rules, controls, and strategies for success.
+
+## Getting Started
+
+1. **Register an Account:**
+   - Navigate to `http://localhost/RetroPlayHub/backend/register.php` to create a new user account.
+
+2. **Log In:**
+   - Access the login page at `http://localhost/RetroPlayHub/backend/login.php` and enter your credentials.
+
+3. **Launch the Game:**
+   - After logging in, go to `http://localhost/RetroPlayHub/components/tic-tac-toe/index.html` to start playing.
+
+4. **Select Difficulty and Play:**
+   - Choose your preferred difficulty level and enjoy the game!
+
+## Contributing
+
+We welcome contributions to enhance the TicTacToe game and RetroPlayHub platform. If you'd like to contribute, please refer to the [Developer Guide](../developer guide/architecture.md) for information on the system architecture and API documentation.
+
+## Support
+
+For any issues, questions, or feedback, please contact the RetroPlayHub support team or refer to the [Troubleshooting](../developer guide/troubleshooting.md) section in the Developer Guide.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
