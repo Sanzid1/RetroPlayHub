@@ -1,0 +1,69 @@
+/* connect-the-dots.css */
+
+/* Game Board Styling */
+#game-board {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    border: 2px solid #343a40;
+    background-color: #f8f9fa;
+}
+
+/* Dots */
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #343a40;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Lines */
+.line {
+    position: absolute;
+    background-color: #343a40;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Change cursor for active lines */
+.line.active {
+    cursor: not-allowed;
+}
+
+/* User and AI Lines */
+.line.user {
+    background-color: green;
+}
+
+.line.ai {
+    background-color: red;
+}
+
+/* Boxes */
+.box {
+    position: absolute;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.box.user {
+    background-color: rgba(0, 128, 0, 0.3); /* Green */
+}
+
+.box.ai {
+    background-color: rgba(255, 0, 0, 0.3); /* Red */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #game-board {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 576px) {
+    #game-board {
+        transform: scale(0.6);
+    }
+}
