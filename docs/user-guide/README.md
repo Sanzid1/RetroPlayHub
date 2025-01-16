@@ -21,7 +21,7 @@ Welcome to **RetroPlay Hub**! This guide will help you navigate the platform, cr
 ## **Getting Started**
 
 1. **Access the Platform:**
-   - Navigate to `http://localhost/RetroPlayHub/index.html` in your web browser.
+   - Navigate to `http://localhost/RetroPlayHub/index.html` `/http://localhost/RetroPlayHub/backend/register.php` in your web browser.
 
 2. **Browse Games:**
    - From the Landing Page, select any of the three available games: TicTacToe, Connect the Dots, or Hangman.
